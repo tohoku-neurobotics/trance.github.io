@@ -3,15 +3,15 @@
   <head>
       <meta charset="UTF-8">
       <link rel="stylesheet" href="main.css">
-      <link rel="icon" type="image/x-icon" href="assets/digit.png">
-      <title>EmoBipedNav</title>
+      <link rel="icon" type="image/x-icon" href="assets/hardware.png">
+      <title>TRANCE</title>
   </head>
   <body>
 
 
     <div id="title_slide">
         <div class="title_left">
-            <h1>EmoBipedNav: Emotion-aware Social Navigation for Bipedal Robots <br> with Deep Reinforcement Learning</h1>
+            <h1>TRANCE: Terrain-aware Reinforcement Learning for <br> Agile Navigation of Quadruped Robots in Crowded Environments</h1>
         
 
             <div class="box alt">
@@ -22,58 +22,37 @@
                   </a>
                 </div>
                 <div class="2u">
-                  <a href="https://abirathr.github.io/AbirathRaju.github.io/">         
-                    <span class="image fit"><img src="assets/author_photo/abirath.jpg" alt="Abirath Raju" /></span>Abirath Raju<sup>1</sup>
-                  </a>
-                </div>
-                <div class="2u">
-                  <a href="https://scholar.google.com/citations?user=41GA5O4AAAAJ&hl=en">     
-                    <span class="image fit"><img src="assets/author_photo/aziz_shamsah.png" alt="Abdulaziz Shamsah" /></span>Abdulaziz Shamsah<sup>2</sup>
-                  </a>
-                </div>
-                <div class="2u">
-                  <a href="https://sites.google.com/site/anqiwuresearch/">                 
-                    <span class="image fit"><img src="assets/author_photo/anqi.jpg" alt="Anqi Wu" /></span>Anqi Wu<sup>1</sup>
-                  </a>
-                </div>
-                <div class="2u">
-                  <a href="https://scholar.google.com/citations?user=-JPZ21IAAAAJ&hl=en">                 
-                    <span class="image fit"><img src="assets/author_photo/seth.png" alt="Seth Hutchinson" /></span>Seth Hutchinson<sup>3</sup>
+                  <a href="https://titoirfan.github.io/">         
+                    <span class="image fit"><img src="assets/author_photo/tito.jpg" alt="Irfan Tito Kurniawan" /></span>Irfan Tito Kurniawan<sup>1</sup>
                   </a>
                 </div>
                 <div class="2u">
                   <a href="https://research.gatech.edu/people/ye-zhao">   
-                    <span class="image fit"><img src="assets/author_photo/ye_zhao.jpg" alt="Ye Zhao" /></span>Ye Zhao<sup>1</sup>
+                    <span class="image fit"><img src="assets/author_photo/ye_zhao.jpg" alt="Ye Zhao" /></span>Ye Zhao<sup>2</sup>
+                  </a>
+                </div>
+                <div class="2u">
+                  <a href="https://scholar.google.com/citations?user=2VmKkUkAAAAJ&hl=en&oi=ao">                 
+                    <span class="image fit"><img src="assets/author_photo/hayashibe.jpeg" alt="Mistuhiro Hayashibe" /></span>Mistuhiro Hayashibe<sup>1</sup>
                   </a>
                 </div>
               </div>
           </div>
 
             <div class="gatech">
-                <p><sup>1</sup>Georgia Institute of Technology, <sup>2</sup>Kuwait University, <sup>3</sup>Northeastern University</p>
+                <p><sup>1</sup>Tohoku University, <sup>2</sup>Georgia Institute of Technology</p>
             </div>
             <div class="button-container">
                 <a href="http://arxiv.org/abs/2503.12538" class="button">Paper</a>
-                <a href="https://youtu.be/fNNL56sTSjY?si=sLgWn5P6o4MndMzl" class="button">Video</a>
-                <a href="https://github.com/GTLIDAR/emobipednav" class="button">Code</a>
+                <a href="https://youtu.be/5f6I9-88TCM" class="button">Video</a>
+                <a href="https://github.com/tohoku-neurobotics/trance" class="button">Code</a>
             </div>
 
             <br>
 
             <div id="abstract" class="grid-container">
                 <p>
-                  This study presents an emotion-aware navigation framework -- EmoBipedNav -- using deep reinforcement learning (DRL) 
-                  for bipedal robots walking in socially interactive environments. The inherent locomotion constraints of bipedal robots 
-                  challenge their safe maneuvering capabilities in dynamic environments. When combined with the intricacies of social 
-                  environments, including pedestrian interactions and social cues, such as emotions, these challenges become even more 
-                  pronounced. To address these coupled problems, we propose a two-stage pipeline that considers both bipedal locomotion 
-                  constraints and complex social environments. Specifically, social navigation scenarios are represented using sequential 
-                  LiDAR grid maps (LGMs), from which we extract latent features, including collision regions, emotion-related discomfort 
-                  zones, social interactions, and the spatio-temporal dynamics of evolving environments. The extracted features are 
-                  directly mapped to the actions of reduced-order models (ROMs) through a DRL architecture. Furthermore, the proposed 
-                  framework incorporates full-order dynamics and locomotion constraints during training, effectively accounting for 
-                  tracking errors and restrictions of the locomotion controller while planning the trajectory with ROMs. Comprehensive 
-                  experiments demonstrate that our approach exceeds both model-based planners and DRL-based baselines.
+                  This study introduces TRANCE: Terrain-aware Reinforcement learning for Agile Navigation in Crowded Environments, a deep reinforcement learning (DRL) framework for quadrupedal navigation. Conventional quadrupedal navigation typically separates motion planning from locomotion control, neglecting whole-body constraints and terrain awareness. End-to-end methods are more integrated but require high-frequency sensing, which is noisy and computationally costly. In addition, most existing approaches assume static environments, limiting their use in human-populated settings. To address these limitations, we propose a two-stage training framework with three DRL pipelines. (1) TRANCE-Loco employs an asymmetric actor–critic (AC) model for quadrupedal locomotion, enabling traversal of uneven terrains without explicit terrain or contact observations. (2) TRANCE-Nav applies a symmetric AC framework for crowd navigation, directly mapping transformed LiDAR data to ego-agent actions under differential-drive kinematics. (3) A unified pipeline, TRANCE, integrates TRANCE-Loco and TRANCE-Nav, supporting terrain-aware quadrupedal navigation in uneven and crowded environments. Comprehensive benchmarks against locomotion and crowd-navigation baselines demonstrate the effectiveness of TRANCE. Hardware experiments further confirm its potential for sim-to-real transfer.
                 </p>
             </div>
         </div>
@@ -82,59 +61,65 @@
     
     <div id="overview">
 
-        <h1>EmoBipedNav</h1>
+        <h1>TRANCE framework</h1>
 
         <p>
-          Our framework begins by obtaining estimated facial emotions using pre-trained CNN models. Simultaneously, we transform raw LiDAR 
-          scans into sequential pie-shape lidar grid maps (LGMs). These grid maps are converted into stacked pixel images which are further 
-          processed through an encoder constructed using convolutional neural networks (CNNs) to extract socially interactive and emotionally 
-          aware features. The resulting latent features are concatenated with the robot's last command and target position, which are fed 
-          into an actor-critic deep reinforcement learning (DRL) structure implemented with multi-layer perceptrons (MLPs). The action output 
-          from the actor network is derived from the reduce-order model (ROM) and practically applied to a bipedal robot with full-body 
-          dynamics and constraints. The torso position and yaw angle obtained from Digit correspond to the ego-agent state. We use the angular 
-          momentum linear inverted pendulum planner (ALIP) and a passivity full-body controller with ankle actuation to track the desirable 
-          ROM trajectory.
+          Our approach decouples quadrupedal locomotion from crowd navigation by independently training two distinct DRL policies. To ensure reliable locomotion, we first utilize an asymmetric actor–critic (AC) architecture that operates without explicit terrain maps or contact states. By relying strictly on proprioceptive inputs, the policy circumvents the challenges associated with noisy exteroceptive data, thereby streamlining the transition from simulation to real-world deployment. Concurrently, a symmetric AC framework is developed for crowd navigation, employing a differential-drive model governed by kinematic constraints. Subsequently, the crowd navigation policy is fine-tuned and extended for the quadrupedal platform. During this second stage of training, the underlying locomotion policy remains frozen to preserve the learned gait primitives while the higher-level navigation controller is optimized. This integration yields a unified, end-to-end policy capable of robust quadrupedal navigation in uneven and human-populated environments. 
         </p>
 
         <div style="display: flex; justify-content: center;">
           <iframe 
             width="560" 
             height="315" 
-            src="https://www.youtube.com/embed/uOsFafqcxEs?autoplay=1&mute=1" 
+            src="https://youtu.be/y388vgP91Vk" 
             frameborder="0" 
             allow="autoplay; encrypted-media" 
             allowfullscreen>
           </iframe>
         </div>
 
-        <h1>Simulation benchmark in MuJoCo</h1>
+        <h1>TRANCE-Loco comparison</h1>
         <p>
-          Initially, we train and test our navigation policy in a physics-based simulator MuJoCo, using a full-body bipedal robot and a full-order 
-          dynamics. Simulatioin comparisons demonstrate the effectiveness of our social navigation pipeline for bipedal robots.
+          In the first stage, we first train a locomotion policy and evaluate the velocity tracking performance.
         </p>
 
         <div style="display: flex; justify-content: center;">
           <iframe 
             width="560" 
             height="315" 
-            src="https://www.youtube.com/embed/DsfEIVZ708A?autoplay=1&mute=1" 
+            src="https://youtu.be/swYlhWuvxF8" 
             frameborder="0" 
             allow="autoplay; encrypted-media" 
             allowfullscreen>
           </iframe>
         </div>
 
-        <h1>Simulation in complex scenario</h1>
+        <h1>TRANCE-Nav comparison</h1>
         <p>
-          We deploy our policy into a more complex simulation scenarios, further indicating that our navigation policy enables the bipedal 
-          robot to adapt to complex and interactive scenarios integrated with pedestrian emotions.
+          In parallel, we train a crowd navigation policy for a differential-drive model.
         </p>
 
         <div style="display: flex; justify-content: center;">
           <iframe 
             width="560" 
             height="315" 
-            src="https://www.youtube.com/embed/IpVLqscL89o?autoplay=1&mute=1" 
+            src="https://youtu.be/Gy1d9IcSYUk" 
+            frameborder="0" 
+            allow="autoplay; encrypted-media" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <h1>TRANCE: unified quadrupedal navigation policy</h1>
+        <p>
+          During the second training phase, the locomotion and navigation policies are harmonized, enabling the quadrupedal robot to navigate uneven and crowded spaces concurrently.
+        </p>
+
+        <div style="display: flex; justify-content: center;">
+          <iframe 
+            width="560" 
+            height="315" 
+            src="https://youtu.be/f5Pdr2HTLww" 
             frameborder="0" 
             allow="autoplay; encrypted-media" 
             allowfullscreen>
@@ -143,57 +128,14 @@
 
         <h1>Sim-to-real</h1>
         <p>
-          We transfer our simulated navigation policy into real-world scenarios with diverse pedestrian motion patterns. The robot should avoid 
-          static obstacles while interacting with pedestrians. We include several representative motion patterns. For example, pedestrians 
-          cross in front of the robot, walk and suddenly stop in front of the robot, group together to cross in front of the robot, and randomly 
-          interact with the robot and other pedestrians. Furthermore, we randomly set pedestrian emotions. Accordingly, our social navigation 
-          policy can well adapt to its own behaviors to avoid collisions and reduce intrusions into discomfort zones of pedestrians, indicating 
-          the potential of sim-to-real transfer of our navigation policy. In addition, we integrate robot localization, pedestrian detection, 
-          and emotion recognition into our pipeline to further validate the practicality of our emotion-aware social navigation. These modules 
-          are achieved by an on-board stereo camera, and corresponding SLAM and perception algorithms. Pedestrians’ states can change between 
-          static and moving, and their emotions also alter between happy, neutral, and negative. To investigate further, we increase the 
-          environment complexities. For example, pedestrians group together and keep static to block the robot. Moreover, we increase the 
-          pedestrian density to make the scenario more crowded. 
+          We evaluated our policy across a diverse range of environments, including indoor flat and uneven surfaces, outdoor cement and grass slopes, and stairs with a 12 cm step height.
         </p>
         
         <div style="display: flex; justify-content: center;">
           <iframe 
             width="560" 
             height="315" 
-            src="https://www.youtube.com/embed/KnCzS2p8oLc?autoplay=1&mute=1" 
-            frameborder="0" 
-            allow="autoplay; encrypted-media" 
-            allowfullscreen>
-          </iframe>
-        </div>
-
-        <h1>Outdoor experiments</h1>
-        <p>
-          Finally, we deploy our navigation policy into more realistic environments, like the campus after classes. Pedestrians are more 
-          crowded, and interactions are more complicated. The bipedal robot can still achieve the emotion-aware social navigation task.
-        </p>
-
-        <div style="display: flex; justify-content: center;">
-          <iframe 
-            width="560" 
-            height="315" 
-            src="https://www.youtube.com/embed/QGdr_MnXXw0?autoplay=1&mute=1" 
-            frameborder="0" 
-            allow="autoplay; encrypted-media" 
-            allowfullscreen>
-          </iframe>
-        </div>
-
-        <h1>Outdoor experiment in a dense crowd</h1>
-        <p>
-          We implemented our policy in a more dense environment, with pedestrian detection and emotion recoginition shown in the top video.
-        </p>
-        
-        <div style="display: flex; justify-content: center;">
-          <iframe 
-            width="560" 
-            height="315" 
-            src="https://www.youtube.com/embed/r_3txTwhS3w?autoplay=1&mute=1" 
+            src="https://youtu.be/THusOulgq9A" 
             frameborder="0" 
             allow="autoplay; encrypted-media" 
             allowfullscreen>
@@ -210,11 +152,11 @@
        
         <h1>BibTeX</h1>
          <p class="bibtex">
-            @article{zhu2025emobipednav,<br>
-            &nbsp;&nbsp;title={EmoBipedNav: Emotion-aware Social Navigation for Bipedal Robots with Deep Reinforcement Learning},<br>
-            &nbsp;&nbsp;author={Wei Zhu, Abirath Raju, Abdulaziz Shamsah, Anqi Wu, Seth Hutchinson, and Ye Zhao},<br>
+            @article{zhu2026trance,<br>
+            &nbsp;&nbsp;title={TRANCE: Terrain-aware Reinforcement Learning for Agile Navigation of Quadruped Robots in Crowded Environments},<br>
+            &nbsp;&nbsp;author={Wei Zhu, Irfan Tito Kurniawan, Ye Zhao, and Mistuhiro Hayashibe},<br>
             &nbsp;&nbsp;journal={arXiv preprint arXiv:2503.12538}<br>
-            &nbsp;&nbsp;year={2025},<br>
+            &nbsp;&nbsp;year={2026},<br>
             }
         </p>
 
